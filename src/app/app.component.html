@@ -325,16 +325,13 @@
   <!-- Resources -->
   <br>
   <br>
-  <br>
   <h3>Enter ID:</h3>
-  <form class="form-inline md-form mr-auto mb-4">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-    <button mdbBtn size="sm" gradient="aqua" rounded="true" class="my-0 waves-light" mdbWavesEffect type="submit">Search</button>
-  </form>
+  <input type="text" name="id" [(ngModel)]="id">
+  <button (click)=verifyID()>Search</button>
   <br>
+  <p *ngIf='invalidId' style="color:red">{{errorMessage}}</p>
   <br>
   <br>
   <div *ngFor="let item of items">{{item}}</div>
-
 
 <router-outlet></router-outlet>

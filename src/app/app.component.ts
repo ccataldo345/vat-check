@@ -8,11 +8,26 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'VAT-check';
-  url = `https://vat.erply.com/numbers?vatNumber=BG999999999`;
+  id = ''
+  url = 'https://vat.erply.com/numbers?vatNumber=';
   items = [];
-  constructor(private http: HttpClient) {
+  errorMessage = 'Invalid ID';
+  invalidId = false;
+
+  constructor(private http: HttpClient) { }
+
+  verifyID() {
+    if (this.id.length !== 11) {
+      this.invalidId = true;
+    } else {
+      this.invalidId = false;
+      this.url = 'https://vat.erply.com/numbers?vatNumber=' + this.id;
+      this.searchVAT();
+    }
+  }
+
+  searchVAT() {
     this.http.get(this.url).toPromise().then(data => {
-      console.log(data);
       for (let key in data)
         if (data.hasOwnProperty(key))
           this.items.push(key, data[key]);
