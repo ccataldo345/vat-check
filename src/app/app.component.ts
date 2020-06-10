@@ -27,6 +27,7 @@ export class AppComponent {
   }
 
   searchVAT() {
+    this.items = [];
     this.http.get(this.url).toPromise().then(data => {
       for (let key in data)
         if (data.hasOwnProperty(key))
