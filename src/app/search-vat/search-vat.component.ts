@@ -14,7 +14,7 @@ export class SearchVATComponent implements OnInit {
   id = ''
   url = 'https://vat.erply.com/numbers?vatNumber=';
   items = [];
-  errorMessage = 'Invalid ID';
+  errorMessage = 'Please enter 11 characters';
   invalidId = false;
 
   constructor(private http: HttpClient) { }
