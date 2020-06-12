@@ -23,12 +23,14 @@ export class AppComponent {
       this.invalidId = false;
       this.url = 'https://vat.erply.com/numbers?vatNumber=' + this.id;
       this.searchVAT();
+      console.log(this.items);
     }
   }
 
   searchVAT() {
     this.items = [];
     this.http.get(this.url).toPromise().then(data => {
+      console.log(data);
       for (let key in data)
         if (data.hasOwnProperty(key))
           this.items.push(key, data[key]);
