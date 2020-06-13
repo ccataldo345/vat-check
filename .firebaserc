@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "vat-check": {
+      "hosting": {
+        "VAT-check": [
+          "vat-check"
+        ]
+      }
+    }
+  }
+}
