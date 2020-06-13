@@ -1,5 +1,16 @@
 # VATCheck
 
+VAT-check is a Single Page Application developed with Angular 9.  
+It searches VAT data information online.  
+It performs json data search against an endpoint and shows the result.  
+Example id for lookup: "EE100247019"
+
+ONLINE DEPLOYMENT on Google Firebase:  
+https://vat-check.firebaseapp.com/  
+
+
+<hr>
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
 ## Development server
