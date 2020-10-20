@@ -35,7 +35,7 @@ export class SearchVATComponent implements OnInit {
       for (let key in data)
         if (data.hasOwnProperty(key))
           this.items.push(key, data[key]);
-    });
+    }).catch(err => console.log(err));
   }
 
 }
